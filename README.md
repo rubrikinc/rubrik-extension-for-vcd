@@ -13,6 +13,7 @@ Before the extension can be installed, vCD and Rubrik must meet the following pr
 
 ## Rubrik Pre-Requisites
 
+* Rubrik must be running CDM 4.2+
 * Rubrik must be configured with a valid SSL Certificate*
 * Rubrik must have the vCD Cell Registered
 * Rubrik Credentials are required to perform tasks via the Extension
