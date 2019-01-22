@@ -9,7 +9,7 @@ Before the extension can be installed, vCD and Rubrik must meet the following pr
 ## vCD Pre-Requisites
 
 * vCD Instance must be running vCD 9.1.0.2 - This is required due to earlier versions not supporting RxJS and HTTPClient.
-* The VMWare Lifecycle Management Plugin should be installed and accessible - See section 'VMWare LCM' for installation steps
+* The VMware Lifecycle Management Plugin should be installed and accessible - See section 'VMware LCM' for installation steps
 
 ## Rubrik Pre-Requisites
 
@@ -86,12 +86,12 @@ Once completed, a new menu item will appear in the Hamburger Menu - entitled Rub
 * Login form in use in settings until persistent credential storage has been implemented
 
 
-# VMWare LCM
+# VMware LCM
 
-Since this extension is reliant on the using VMWare's Plugin Lifecycle Management, the following steps are required to install LCM:
+Since this extension is reliant on the using VMware's Plugin Lifecycle Management, the following steps are required to install LCM:
 
-## Obtain Vmware SDK
-First, we need to clone and build the latest VMWare SDK and build the Plugin:
+## Obtain VMware SDK
+First, we need to clone and build the latest VMware SDK and build the Plugin:
 
 ```             
 git clone https://github.com/rubrik-devops/vcd-ext-sdk.git
