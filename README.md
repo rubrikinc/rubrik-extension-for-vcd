@@ -1,4 +1,4 @@
-# Rubrik vCloud Director (vCD) Extensibility - Early Access#
+# Rubrik vCloud Director (vCD) Extensibility - Early Access
 
 This is the install guide for the Rubrik vCloud Director Extension
 
@@ -13,8 +13,8 @@ Before the extension can be installed, vCD and Rubrik must meet the following pr
 
 ## Rubrik Pre-Requisites
 
-* Rubrik must be running CDM 4.2+ for vCD 9.1+
-* Rubrik must be running CDM 5.0+ for vCD 9.5+
+* Rubrik must be running CDM 4.2+ for upto vCD 9.1
+* Rubrik must be running CDM 5.0+ for vCD 9.1, 9.5
 * Rubrik must be configured with a valid SSL Certificate*
 * Rubrik must have the vCD Cell Registered
 * Rubrik Credentials are required to perform tasks via the Extension
