@@ -35,12 +35,10 @@ server {
   server_name  <reverse proxy dns address>;
   
   location / {
-
- if ($request_method ~* "(GET|POST|PATCH|DELETE)") {
-      add_header "Access-Control-Allow-Origin" "$http_origin" always;
-      add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
+  if ($request_method ~* "(GET|POST|PATCH|DELETE)") {
+    add_header "Access-Control-Allow-Origin" "$http_origin" always;
+    add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
     }
-
     # Preflighted requests
     if ($request_method = OPTIONS ) {
       add_header "Access-Control-Allow-Origin" "$http_origin" always;
@@ -48,17 +46,21 @@ server {
       add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept, x-vcloud-authorization";
       return 200;
     }
-
-    proxy_pass https://proxy;
-    proxy_redirect     off;
-    proxy_set_header   Host $host;
-    proxy_set_header   X-Real-IP $remote_addr;
-    proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header   X-Forwarded-Host $server_name;
-    proxy_connect_timeout       300;
-    proxy_send_timeout          300;
-    proxy_read_timeout          90m;
-    send_timeout                300;
+  proxy_pass https://proxy;
+  proxy_redirect     off;
+  proxy_set_header   Host $host;
+  proxy_set_header   X-Real-IP $remote_addr;
+  proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header   X-Forwarded-Host $server_name;
+  proxy_buffering        on;
+  proxy_cache            RBK;
+  proxy_cache_valid      200  1m;
+  proxy_cache_use_stale  error timeout invalid_header updating http_500 http_502 http_503 http_504;
+  proxy_ignore_headers Set-Cookie Cache-Control;
+  proxy_connect_timeout       300;
+  proxy_send_timeout          300;
+  proxy_read_timeout          90m;
+  send_timeout                300;
   }
 ```
 
