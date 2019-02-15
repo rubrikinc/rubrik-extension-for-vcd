@@ -6,20 +6,20 @@ The following section outlines how to get started using the Rubrik Plugin for vC
 
 ## Installing the Rubrik Add-On for vCloud Director
 
-* vCD Instance must be running vCD 9.1.0.2 - This is required due to earlier versions not supporting RxJS and HTTPClient.
+* vCD Instance must be running vCD 9.1.0.2 or newer - This is required due to earlier versions not supporting RxJS and HTTPClient.
 * The VMware Lifecycle Management Plugin should be installed and accessible - See section 'VMware LCM' for installation steps
 
 ## Prerequisites
 
 ### Rubrik Pre-Requisites
 
-* Rubrik must be running CDM 4.2+ for upto vCD 9.1
+* Rubrik must be running CDM 4.2+ for upto vCD 9.1 (9.5 works with the exception of Export)
 * Rubrik must be running CDM 5.0+ for vCD 9.1, 9.5
 * Rubrik must be configured with a valid SSL Certificate*
-* Rubrik must have the vCD Cell Registered
-* Rubrik Credentials are required to perform tasks via the Extension
+* Rubrik must have the vCD Cell Registered - Refer to Rubrik User Guide Section: Adding a vCloud Director instance
+* Rubrik Credentials are required to perform tasks via the Extension - Refer to Rubrik Credentials Section
 
-*SSL Certificates that are self signed, need to be trusted by the client before the extension will work.
+*SSL Certificates that are self signed need to be trusted by the client before the extension will work.
 
 ### Additional Pre-Requisites
 
@@ -31,7 +31,7 @@ A Linux server is required to run nginx or any preferred reverse proxy. This gui
 
 In order to reach Rubrik, we need to proxy via Nginx due to CORS restricting access directly. This is a temporary measure until CORS can be whitelisted directly on Rubrik, at which point, the reverse proxy will become redundant.
 
-First, lets build a linux server to host Nginx (rpm or deb)
+First, lets build a linux server to host Nginx (rpm only in this guide)
 
 Once we have our server configured with Network Settings, we'll need to install the Nginx Packages:
 
@@ -239,3 +239,10 @@ The plugin installation is now complete and the buttons at the top of the screen
 * File Recovery
 * Export vApp (Submit does not work at this point)
 
+### Rubrik Permissions
+
+Since the vCD portal generates a token from the credentials entered, we can use Rubrik Multi-Tenancy to control features and access to various features.
+
+It's recommended that if SLAs are to be restricted the credentials for the Tenant should also be restricted to their Archival Targers, SLAs and VMs within Rubrik.
+
+This is outlined in the Rubrik User Guide Chapter 4 - Multitenant Organizations. We will use the user's existing permissions from vCloud Director to ensure we remain compliant with the existing RBAC models.
