@@ -189,7 +189,7 @@ Save the file. Once saved, run the command `yarn deploy` from within the `plugin
 
 You can confirm that this was successful by logging into the HTML5 Provider Tenant and determine if `Plugin Lifecycle Management` is in the humburger dropdown:
 
-![alt-text](/Images/image1.png)
+![alt-text](/Install/Images/image1.png)
 
 Once confirmed, we can then start configuration of the Rubrik Extension
 
@@ -201,23 +201,23 @@ Open the zip file, and open the file `bundle.js` - perform a search for `DNS_PLA
 
 Now that we have the plugin configured, we need to upload this vCD. Start by opening the `Plugin Lifecycle Management` from the HTML5 Provider Portal
 
-![alt-text](/Images/image1.png)
+![alt-text](/Install/Images/image1.png)
 
 Once open, you should see a menu as per below:
 
-![alt-text](/Images/image2.png)
+![alt-text](/Install//Images/image2.png)
 
 Press the `upload` button and you will be prompted with an option to select a file to upload; press this button and navigate to the zip file and confirm you can see the scope of the plugin.
 
-![alt-text](/Images/image3.png)
+![alt-text](/Install/Images/image3.png)
 
 Press Next, and confirm the scope of the plugin (Note: This can be changed later after the plugin is installed).
 
-![alt-text](/Images/image4.png)
+![alt-text](/Install/Images/image4.png)
 
 If you have selected `Scope for Tenants` you will then be brought to a tenant screen; select the tenants that require access to the plugin.
 
-![alt-text](/Images/image5.png)
+![alt-text](/Install/Images/image5.png)
 
 Finally, Finish the Wizard and confirm you can see Rubrik under the name column inside the Plugins window.
 
@@ -225,11 +225,11 @@ You will now have a new menu item in the hamburger dropdown entitled `Data Manag
 
 To confirm the plugin is working and reverse proxy is working, browse to `Data Management` and open the `Settings` Tab:
 
-![alt-text](/Images/image6.png)
+![alt-text](/Install/Images/image6.png)
 
 In this window, enter the Reverse Proxy address, a Rubrik Username and Password and Press Authorize - the Token field should populate once completed. Browse back to `Protection` and confirm that vApps load in the UI:
 
-![alt-text](/Images/image7.png)
+![alt-text](/Install/Images/image7.png)
 
 The plugin installation is now complete and the buttons at the top of the screen control the actions for the following:
 
