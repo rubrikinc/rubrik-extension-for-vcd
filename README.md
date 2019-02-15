@@ -24,9 +24,6 @@ Before the extension can be installed, vCD and Rubrik must meet the following pr
 ## Additional Pre-Requisites
 
 * To resolve an issues with CORS Security, an Nginx or Apache Reverse Proxy must be configured and include the following in the configuration:
-<!-- 
-    add something here when we have a solution for persistent data
--->
 
 Sites-Enabled:
 ```
@@ -76,9 +73,9 @@ upstream proxy {
 
 ## Installation
 
-Retrieve the latest version available from Releases within this github repo.
+Retrieve the latest version available from Releases within this github repository.
 Open the Plugin Lifecycle Management extension and upload a new plugin.
-You will be prompted to upload from a file, select `Rubrik_vCD_ext_v1.0.zip` and deploy.
+You will be prompted to upload from a file, select `rubrik_vcd_ext_v0.9.zip` and deploy.
 
 During the installation you will have the option to select if Providers and Tenants are enabled for the plugin, follow the wizard and deploy to the revelant tenants and provider.
 
@@ -90,7 +87,7 @@ Once completed, a new menu item will appear in the Hamburger Menu - entitled Dat
 * Login form in use in settings until persistent credential storage has been implemented
 * DNS Address for Reverse Proxy is hard-coded until action above is completed
 * Upon completing File Restore, page refresh (f5) is required to fix the loading of the wizards
-* Opening vApp Recovery after running File Restore will
+* Opening vApp Recovery after running File Restore will cause the form to crash
 
 # VMware LCM
 
