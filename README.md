@@ -1,14 +1,10 @@
-# Rubrik vCloud Director (vCD) Extensibility - Beta
+# Rubrik vCloud Director (vCD) Extensibility v1.0
 
 Contains Rubrik extensibility plugin for VMware vCloud Director.
 
-## :exclamation: Beta Known Issues
+## :exclamation: Early Access
 
-* Moving back and forth between menus before previous calls finish, will present duplicate data
-* Login form in use in settings until persistent credential storage has been implemented
-* DNS Address for Reverse Proxy is hard-coded until action above is completed
-* Upon completing File Restore, page refresh (f5) is required to fix the loading of the wizards
-* Opening vApp Recovery after running File Restore will cause the form to crash
+* This is the MVP product for vCD Extensibility - Bugs may exist, please use the issues on this repo to highlight any issues found.
 
 # :blue_book: Documentation 
 

@@ -237,7 +237,20 @@ The plugin installation is now complete and the buttons at the top of the screen
 * Assign SLA Protection
 * Recover vApp
 * File Recovery
-* Export vApp (Submit does not work at this point)
+* Export vApp
+* Credential Management
+
+### Using the extension as a Provider
+
+The provider portal provides additional functionlity than the tenant can see. Using this portal, you will need to login to Rubrik via the settings tab and using the `Configure Rubrik Credentials` form.
+
+### Setting Up Tenant Permissions
+
+Open the extension from the Provider portal, and browse into the Settings Tab.
+
+Use the Add Credentials to assign credentials to a Tenant; the tenant will be informed to contact an admin to setup credentials until this is completed.
+
+![alt-text](/docs/img/image8.png)
 
 ### Rubrik Permissions
 
