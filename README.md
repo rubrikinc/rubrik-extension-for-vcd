@@ -6,6 +6,8 @@ Contains Rubrik extensibility plugin for VMware vCloud Director.
 
 * This is the MVP product for vCD Extensibility - Bugs may exist, please use the issues on this repo to highlight any issues found.
 
+Version 1.0 can be found [here](https://github.com/rubrikinc/rubrik-extension-for-vcd/releases/tag/1.0). 
+
 # :blue_book: Documentation 
 
 Here are some resources to get you started! If you find any challenges from this project are not properly documented or are unclear, please [raise an issue](https://github.com/rubrikinc/rubrik-extension-for-vcd/issues/new/choose) and let us know! This is a fun, safe environment - don't worry if you're a GitHub newbie! :heart:
