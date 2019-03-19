@@ -197,9 +197,7 @@ Once confirmed, we can then start configuration of the Rubrik Extension
 
 Download the latest release from the Release Tab: https://github.com/rubrikinc/rubrik-extension-for-vcd/releases
 
-Open the zip file, and open the file `bundle.js` - perform a search for `DNS_PLACEHOLDER` - Replace this text with the DNS Name of the Reverse Proxy we setup previously e.g. `rbk-rproxy.domain.com` save and close the file. If prompt to update the zip, please do so.
-
-Now that we have the plugin configured, we need to upload this vCD. Start by opening the `Plugin Lifecycle Management` from the HTML5 Provider Portal
+We now need to upload this to vCD - start by opening the `Plugin Lifecycle Management` from the HTML5 Provider Portal
 
 ![alt-text](/docs/img/image1.png)
 
