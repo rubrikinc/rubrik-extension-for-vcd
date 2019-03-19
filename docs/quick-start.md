@@ -201,7 +201,7 @@ Open the zip file, and open the file `bundle.js` - perform a search for `DNS_PLA
 
 Now that we have the plugin configured, we need to upload this vCD. Start by opening the `Plugin Lifecycle Management` from the HTML5 Provider Portal
 
-![alt-text](/docs/img/Images/image1.png)
+![alt-text](/docs/img/image1.png)
 
 Once open, you should see a menu as per below:
 
