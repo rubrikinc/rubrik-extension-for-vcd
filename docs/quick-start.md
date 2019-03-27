@@ -5,7 +5,7 @@
 The following section outlines how to get started using the Rubrik Extension for vCloud Director. This includes installation and configuration of the plug-in, as well as how to import the [Lifecycle Management Plug-in](https://github.com/vmware/vcd-ext-sdk/tree/master/ui/plugin-lifecycle), configure credentials and leverage role-based access control (RBAC).
 
 Workflow for installing the extension:
-1. Installing and Configuring nginx Reverse Proxy
+1. Install and Configure Nginx Reverse Proxy
 2. Create a Certificate for Nginx Reverse Proxy
 3. Build the VMware vCD Lifecycle Management Plug-in
 4. Install the VMware vCD Lifecycle Management Plug-in
