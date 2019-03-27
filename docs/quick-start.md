@@ -1,49 +1,46 @@
-# Quick Start Guide: Rubrik Add-On for vCloud Director
+# Quick Start Guide: Rubrik Extension for vCloud Director
 
-## Introduction to the Rubrik Add-On for vCloud Director
+## Introduction to the Rubrik Extension for vCloud Director
 
-The following section outlines how to get started using the Rubrik Plugin for vCloud Director, including installation and configuration of the plugin as well as how to import the Lifecycle Management plugin, Configure Credentials and leverage RBAC.
+The following section outlines how to get started using the Rubrik Extension for vCloud Director. This includes installation and configuration of the plug-in, as well as how to import the [Lifecycle Management Plug-in](https://github.com/vmware/vcd-ext-sdk/tree/master/ui/plugin-lifecycle), configure credentials and leverage role-based access control (RBAC).
 
-## Installing the Rubrik Add-On for vCloud Director
+Workflow for installing the extension:
+1. Installing and Configuring nginx Reverse Proxy
+2. Create a Certificate for Nginx Reverse Proxy
+3. Build the VMware vCD Lifecycle Management Plug-in
+4. Install the VMware vCD Lifecycle Management Plug-in
+5. Deploy the Rubrik Extension for vCloud Directory
+6. Configure the Rubrik Extension for vCloud Directory
 
-* vCD Instance must be running vCD 9.1.0.2 or newer - This is required due to earlier versions not supporting RxJS and HTTPClient.
-* The VMware Lifecycle Management Plugin should be installed and accessible - See section 'VMware LCM' for installation steps
+### Rubrik Prerequisites
 
-## Prerequisites
-
-### Rubrik Pre-Requisites
-
-* Rubrik must be running CDM 4.2+ for upto vCD 9.1 (9.5 works with the exception of Export)
+* Rubrik must be running CDM 4.2+ for vCD versions up to 9.1 
+  * vCD 9.5 works with CDM 4.2 with the exception of Export
 * Rubrik must be running CDM 5.0+ for vCD 9.1, 9.5
-* Rubrik must be configured with a valid SSL Certificate*
-* Rubrik must have the vCD Cell Registered - Refer to Rubrik User Guide Section: Adding a vCloud Director instance
-* Rubrik Credentials are required to perform tasks via the Extension - Refer to Rubrik Credentials Section
+* Rubrik must be configured with a valid SSL Certificate
+  * SSL Certificates that are self signed need to be trusted by the client before the extension will work
+* Rubrik must have the vCD Cell Registered. Refer to Rubrik User Guide Section: "Adding a vCloud Director instance".
+* Rubrik Credentials are required to perform tasks via the Extension. Refer to "Using the Extension" Section.
 
-*SSL Certificates that are self signed need to be trusted by the client before the extension will work.
+### Additional Prerequisites
 
-### Additional Pre-Requisites
+* vCloud Director (vCD) must be version 9.1.0.2 or newer. This is required due to earlier versions not supporting RxJS and HTTPClient.
+* A Linux server is required to run [nginx](https://www.nginx.com/), or another preferred reverse proxy. This guide currently only includes steps for installing and configuring nginx.
+* The VMware [Lifecycle Management Plug-in](https://github.com/vmware/vcd-ext-sdk/tree/master/ui/plugin-lifecycle) is used to install the Rubrik Extension for vCloud Director. Steps to build and install this plug-in are detailed below.
 
-A Linux server is required to run nginx or any preferred reverse proxy. This guide currently only includes steps for nginx.
+## Installing and Configuring Nginx Reverse Proxy
 
-### Configuration
+In order to commnuicate with Rubrik CDM, we need to proxy via nginx due to [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) restricting access directly. This is a temporary measure until CORS can be whitelisted directly on Rubrik, at which point the reverse proxy will no longer be needed.
 
-#### Nginx Reverse Proxy
+The steps below can be used to install and configure nginx on an RPM-based linux distribution, e.g. RHEL or CentOS. If you are starting from scratch on a new server, configure the network settings, then install and configure nginx based on the following steps.
 
-In order to reach Rubrik, we need to proxy via Nginx due to CORS restricting access directly. This is a temporary measure until CORS can be whitelisted directly on Rubrik, at which point, the reverse proxy will become redundant.
-
-First, lets build a linux server to host Nginx (rpm only in this guide)
-
-Once we have our server configured with Network Settings, we'll need to install the Nginx Packages:
-
-RHEL:
-
-Create the nginx yum repository:
+1. Create the nginx yum repository
 
 ```
 vi /etc/yum.repos.d/nginx.repo
 ```
 
-Add the following to the file:
+2. Add the following to the nginx.repo file
 
 CentOS:
 ```
@@ -63,33 +60,34 @@ gpgcheck=0
 enabled=1
 ```
 
-Install the packages:
+3. Install the packages
 
 ```
-sudo yum install nginx
+sudo yum update -y
+sudo yum install -y nginx
 ```
 
 You should have confirmation that the packages installed successfully.
 
-Change directories to the Sites Enabled:
+4. Change directories to the Sites Enabled
 
 ```
 cd /etc/nginx/sites-enabled
 ```
 
-Create a new nginx site with a name of the linux host e.g.:
+5. Create a new nginx site with a name of the linux host
 
 ```
 sudo touch rbk-rproxy.domain.com.conf
 ```
 
-Open the file for editing:
+6. Open the file for editing:
 
 ```
 sudo vi rbk-rproxy.domain.com.conf
 ```
 
-Paste the following config (press `insert` first to allow vi to write):
+7. Paste the following config (press `i` first to allow vi to write):
 
 ```
 server {
@@ -126,21 +124,21 @@ server {
   }
 ```
 
-Save the file and exit (in vi hit `esc` to leave `insert` mode and type `:wq!` and hit return to save and quit)
+Save the file and exit (in vi hit `esc` to leave `insert` mode and type `:wq!` follwed by return to save and quit)
 
-Drop out of the `sites-enabled directory` with `cd..` and browse to:
+8. Change to the `conf.d` directory
 
 ```
-cd ./conf.d
+cd ../conf.d
 ```
 
-Create a new file:
+9. Create the proxy configuration file
 
 ```
 sudo touch proxy-upstream.conf
 ```
 
-Edit this file with `sudo vi proxy-upstream.conf` and add the following content targetting the rubrik cluster DNS name or IP:
+10. Edit this file with `sudo vi proxy-upstream.conf`, and add the following content targetting the rubrik cluster DNS name or IP
 
 ```
 upstream proxy {
@@ -148,15 +146,43 @@ upstream proxy {
    }
 ```
 
-Finally, restart the Nginx services `sudo nginx -s reload`
+## Create a Certificate for Nginx Reverse Proxy
 
-That completes the Reverse Proxy Configuration.
+Follow the instructions on this blog post to create a self-signed certificate: [https://www.humankode.com/ssl/create-a-selfsigned-certificate-for-nginx-in-5-minutes](https://www.humankode.com/ssl/create-a-selfsigned-certificate-for-nginx-in-5-minutes). Once complete, restart the Nginx services `sudo nginx -s reload`. This completes the Reverse Proxy Configuration.
 
-### Installing Lifecycle Management
+## Building the VMware vCD Lifecycle Management Plug-in
 
-In order to upload the vCD plugin, we need to install the VMware Lifecycle Management plugin which is used for managing and updating 3rd party plugins. In order to do this, we need access to a terminal and a machine with Java.
+In order to upload the Rubrik plugin to vCD, we need to build and install the VMware Lifecycle Management Plug-in. This is used for managing and updating 3rd party plugins. In order to do this, we need access to an RPM-based Linux machine. 
 
-Run the following commands from a termainal:
+1. Connect to the Linux machine you will use to build the plugin, and install the necessary prerequisites. You will install Apache Maven via `yum` so the appropriate dependencies are installed, then uninstall it. The build process depends on a newer version of Maven than the one available via `yum`, so you will download the recent release and install it.
+```
+sudo yum update -y
+sudo yum install -y git maven wget epel-release GConf2
+sudo yum remove -y maven
+sudo yum update -y
+sudo yum install -y python2-pip
+sudo pip install configparser
+wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+tar xvfz apache-maven-3.6.0-bin.tar.gz
+export PATH=$(pwd)/apache-maven-3.6.0/bin:$PATH
+```
+
+2. Install Google Chrome
+
+```
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+sudo yum localinstall -y google-chrome-stable_current_x86_64.rpm
+```
+
+3. Install Yarn
+
+```
+curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+sudo yum -y install yarn
+```
+
+4. Clone the [vCD Extension SDK](https://github.com/vmware/vcd-ext-sdk) from Github and begin the build process.
 
 ```
 git clone https://github.com/vmware/vcd-ext-sdk.git
@@ -165,18 +191,47 @@ mvn install
 cd ../ui/api-client
 mvn generate-sources
 yarn
+```
+
+5. Edit the `packages/sdk/karma.conf.js` file to pass additional configuration parameters to Chrome. Find this line:
+
+```
+browsers: ['ChromeHeadless'],
+```
+
+Replace the line above with:
+
+```
+browsers: ['HeadlessChrome'],
+customLaunchers:{
+    HeadlessChrome:{
+        base: 'ChromeHeadless',
+        flags: [
+        '--no-sandbox',
+        '--headless',
+        '--disable-gpu',
+        '--disable-translate',
+        '--disable-extensions'
+        ]
+    }
+},
+```
+
+6. Complete the build
+
+```
 yarn bootstrap
 cd ../plugin-lifecycle
 yarn build
 ```
 
-### Deploy LCM
+## Installing the VMware vCD Lifecycle Management Plug-in
 
-Before you can deploy the extension, we need to create a credential template for use:
+1. Before you deploying the extension, create a credential template for use
 
-Copy `ui_ext_api.ini.template` and paste naming the file `ui_ext_api.ini` e.g. `cp ./ui_ext_api.ini.template ./ui_ext_api.ini`
+`cp ./ui_ext_api.ini.template ./ui_ext_api.ini` 
 
-Once completed, open the file with a text editor and populate the fields:
+2. Edit `ui_ext_api.ini`, fill in the correct parameters and save the file
 
 ```
 vcduri=https://<vcd-cell-dns-address>
@@ -185,19 +240,17 @@ organization=System
 password=<administrator password>
 ```
 
-Save the file. Once saved, run the command `yarn deploy` from within the `plugin-lifecycle` folder and confirm success.
-
-You can confirm that this was successful by logging into the HTML5 Provider Tenant and determine if `Plugin Lifecycle Management` is in the humburger dropdown:
+3. Run `yarn deploy` to deploy the plug-in to vCD based on the parameters you specified. You can confirm that plug-in installation was successful by logging into the HTML5 Provider Tenant portal (`https://yourvcd.domain.com/provider`) and verify that `Plugin Lifecycle Management` is in the humburger dropdown:
 
 ![alt-text](/docs/img/image1.png)
 
-Once confirmed, we can then start configuration of the Rubrik Extension
+Once confirmed, we can then start configuration of the Rubrik extension
 
-### Deploy Rubrik Extension
+## Deploy Rubrik Extension
 
-Download the latest release from the Release Tab: https://github.com/rubrikinc/rubrik-extension-for-vcd/releases
+1. Download the latest release from [https://github.com/rubrikinc/rubrik-extension-for-vcd/releases](https://github.com/rubrikinc/rubrik-extension-for-vcd/releases)
 
-We now need to upload this to vCD - start by opening the `Plugin Lifecycle Management` from the HTML5 Provider Portal
+2. Open `Plugin Lifecycle Management` from the HTML5 Provider Portal
 
 ![alt-text](/docs/img/image1.png)
 
@@ -205,23 +258,19 @@ Once open, you should see a menu as per below:
 
 ![alt-text](/docs/img/image2.png)
 
-Press the `upload` button and you will be prompted with an option to select a file to upload; press this button and navigate to the zip file and confirm you can see the scope of the plugin.
+3. Press the `upload` button and you will be prompted with an option to select a file to upload; press this button and navigate to the zip file and confirm you can see the scope of the plug-in.
 
 ![alt-text](/docs/img/image3.png)
 
-Press Next, and confirm the scope of the plugin (Note: This can be changed later after the plugin is installed).
+4. Press Next, and confirm the scope of the plug-in (Note: This can be changed later after the plug-in is installed).
 
 ![alt-text](/docs/img/image4.png)
 
-If you have selected `Scope for Tenants` you will then be brought to a tenant screen; select the tenants that require access to the plugin.
+5. If you have selected `Scope for Tenants` you will then be brought to a tenant screen; select the tenants that require access to the plug-in.
 
 ![alt-text](/docs/img/image5.png)
 
-Finally, Finish the Wizard and confirm you can see Rubrik under the name column inside the Plugins window.
-
-You will now have a new menu item in the hamburger dropdown entitled `Data Management`.
-
-To confirm the plugin is working and reverse proxy is working, browse to `Data Management` and open the `Settings` Tab:
+6. Finally, finish the wizard and confirm you can see Rubrik under the name column inside the plug-ins window. You will now have a new menu item in the hamburger dropdown entitled `Data Management`. To confirm the plug-in is working and the reverse proxy is working, browse to `Data Management` and open the `Settings` Tab:
 
 ![alt-text](/docs/img/image6.png)
 
@@ -229,7 +278,7 @@ In this window, enter the Reverse Proxy address, a Rubrik Username and Password 
 
 ![alt-text](/docs/img/image7.png)
 
-The plugin installation is now complete and the buttons at the top of the screen control the actions for the following:
+The plug-in installation is now complete and the buttons at the top of the screen control the actions for the following:
 
 * On Demand Snapshots
 * Assign SLA Protection
@@ -238,9 +287,9 @@ The plugin installation is now complete and the buttons at the top of the screen
 * Export vApp
 * Credential Management
 
-### Using the extension as a Provider
+## Using the Extension
 
-The provider portal provides additional functionlity than the tenant can see. Using this portal, you will need to login to Rubrik via the settings tab and using the `Configure Rubrik Credentials` form.
+The provider portal provides additional functionality beyond what the tenant can see. Using this portal, you will need to login to Rubrik via the settings tab and using the `Configure Rubrik Credentials` form.
 
 ### Setting Up Tenant Permissions
 
@@ -254,6 +303,4 @@ Use the Add Credentials to assign credentials to a Tenant; the tenant will be in
 
 Since the vCD portal generates a token from the credentials entered, we can use Rubrik Multi-Tenancy to control features and access to various features.
 
-It's recommended that if SLAs are to be restricted the credentials for the Tenant should also be restricted to their Archival Targers, SLAs and VMs within Rubrik.
-
-This is outlined in the Rubrik User Guide Chapter 4 - Multitenant Organizations. We will use the user's existing permissions from vCloud Director to ensure we remain compliant with the existing RBAC models.
+It's recommended that if SLAs are to be restricted the credentials for the Tenant should also be restricted to their Archival Targers, SLAs and VMs within Rubrik. This is outlined in the Rubrik User Guide `Chapter 4 - Multitenant Organizations`. The plug-in will use the user's existing permissions from vCD to ensure we remain compliant with the existing RBAC models.
