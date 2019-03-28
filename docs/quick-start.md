@@ -14,12 +14,12 @@ Workflow for installing the extension:
 
 ### Rubrik Prerequisites
 
-* Rubrik must be running CDM 4.2+ for vCD versions up to 9.1 
-  * vCD 9.5 works with CDM 4.2 with the exception of Export
-* Rubrik must be running CDM 5.0+ for vCD 9.1, 9.5
-* Rubrik must be configured with a valid SSL Certificate
+* Rubrik CDM 4.2+: Supports vCD 8.10 - 9.1
+  * vCD 9.5 works with the exception of the "Export vApp" function
+* Rubrik CDM 5.0: Supports vCD 8.10 - 9.5
+* Rubrik CDM must be configured with a valid SSL Certificate
   * SSL Certificates that are self signed need to be trusted by the client before the extension will work
-* Rubrik must have the vCD Cell Registered. Refer to Rubrik User Guide Section: "Adding a vCloud Director instance".
+* Rubrik CDM must have the vCD Cell Registered. Refer to Rubrik User Guide Section: "Adding a vCloud Director instance".
 * Rubrik Credentials are required to perform tasks via the Extension. Refer to "Using the Extension" Section.
 
 ### Additional Prerequisites
