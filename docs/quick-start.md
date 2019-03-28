@@ -19,12 +19,12 @@ Workflow for installing the extension:
 * Rubrik CDM 5.0: Supports vCD 8.10 - 9.5
 * Rubrik CDM must be configured with a valid SSL Certificate
   * SSL Certificates that are self signed need to be trusted by the client before the extension will work
-* Rubrik CDM must have the vCD Cell Registered. Refer to Rubrik User Guide Section: "Adding a vCloud Director instance".
+* Rubrik CDM must have the vCloud Director (vCD) Cell Registered. Refer to Rubrik User Guide Section: "Adding a vCloud Director instance".
 * Rubrik Credentials are required to perform tasks via the Extension. Refer to "Using the Extension" Section.
 
 ### Additional Prerequisites
 
-* vCloud Director (vCD) must be version 9.1.0.2 or newer. This is required due to earlier versions not supporting RxJS and HTTPClient.
+* vCD must be version 9.1.0.2 or newer. This is required due to earlier versions not supporting RxJS and HTTPClient.
 * A Linux server is required to run [nginx](https://www.nginx.com/), or another preferred reverse proxy. This guide currently only includes steps for installing and configuring nginx.
 * The VMware [Lifecycle Management Plug-in](https://github.com/vmware/vcd-ext-sdk/tree/master/ui/plugin-lifecycle) is used to install the Rubrik Extension for vCloud Director. Steps to build and install this plug-in are detailed below.
 
