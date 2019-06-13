@@ -33,9 +33,7 @@ Workflow for installing the extension:
 If the extension is already in use, we can upgrade the extension simply by installing through the existing Plugin Lifecycle Manager. 
 You can upload to the plugin and disable to the previous version (1.0.x can be deleted after you are happy the upgrade is working).
 
-:exclamation:
-
-Prior to allowing the extension for use, we will need to update the metadata as we now encrpyt the the username field as well as the password.
+:exclamation: Prior to allowing the extension for use, we will need to update the metadata as we now encrpyt the the username field as well as the password.
 
 To perform these steps, open the `Settings` tab in provider view and first hit `Authenticate` and login. Once logged in, press `close` and select `Add/Update Metadata`.
 
