@@ -1,5 +1,43 @@
 # Quick Start Guide: Rubrik Extension for vCloud Director
 
+## Patch Notes - 1.1.0
+
+### Existing Features
+
+* On Demand Snapshots
+* Assign SLA Protection
+* Recover vApp
+* File Recovery
+* Export vApp
+* Credential Management
+
+### New Features for 1.1.0
+* Dashboard Feature
+    * Protected vApps
+    * SLA Summary
+    * Summary Graphs
+* Reporting 
+    * SLA Compliance - Details
+    * Capacity Over Time - Details
+    * Protection/Recovery Tasks - Details
+* Username Encryption Added for Metadata
+* Branding/White-label added
+* Ability to see Events per vApp
+* Event Series - In depth task details
+* Provider Authentication Moved inside Modal
+* Rubrik Organisation Support - Global and Org both supported
+
+### Bug Fixes
+* Fixed a bug with metadata updating/deleting
+* Fixed a bug with vApps containing `+` symbols
+* Fixed Issues with Tenant access to 2x vCD Cells in Rubrik with a same named vApp
+* Fixed Issues with SLAs not loading - Rubrik Version (4.2 and 5.0+) detection added including SLAv2 Support
+* Re-written Data Population for Protection Data-grid - async callbacks
+* Polaris Managed SLAs temporarily hidden - Breaking On-Demand and SLA Assignment
+* File Recovery Form Crashes after running Export (Refresh to Fix)
+* Export Showing Fields to name vApp when Restoring to existing
+* Export Not resetting all fields on cancel
+
 ## Introduction to the Rubrik Extension for vCloud Director
 
 The following section outlines how to get started using the Rubrik Extension for vCloud Director. This includes installation and configuration of the plug-in, as well as how to import the [Lifecycle Management Plug-in](https://github.com/vmware/vcd-ext-sdk/tree/master/ui/plugin-lifecycle), configure credentials and leverage role-based access control (RBAC).
@@ -299,42 +337,6 @@ In this window, enter the Reverse Proxy address, a Rubrik Username and Password 
 ![alt-text](/docs/img/image7.png)
 
 The plug-in installation is now complete and the buttons at the top of the screen control the actions for the following:
-
-### Existing Features
-
-* On Demand Snapshots
-* Assign SLA Protection
-* Recover vApp
-* File Recovery
-* Export vApp
-* Credential Management
-
-### New Features for 1.1.0
-* Dashboard Feature
-    * Protected vApps
-    * SLA Summary
-    * Summary Graphs
-* Reporting 
-    * SLA Compliance - Details
-    * Capacity Over Time - Details
-    * Protection/Recovery Tasks - Details
-* Username Encryption Added for Metadata
-* Branding/White-label added
-* Ability to see Events per vApp
-* Event Series - In depth task details
-* Provider Authentication Moved inside Modal
-* Rubrik Organisation Support - Global and Org both supported
-
-### Bug Fixes
-* Fixed a bug with metadata updating/deleting
-* Fixed a bug with vApps containing `+` symbols
-* Fixed Issues with Tenant access to 2x vCD Cells in Rubrik with a same named vApp
-* Fixed Issues with SLAs not loading - Rubrik Version (4.2 and 5.0+) detection added including SLAv2 Support
-* Re-written Data Population for Protection Data-grid - async callbacks
-* Polaris Managed SLAs temporarily hidden - Breaking On-Demand and SLA Assignment
-* File Recovery Form Crashes after running Export (Refresh to Fix)
-* Export Showing Fields to name vApp when Restoring to existing
-* Export Not resetting all fields on cancel
 
 ## Using the Extension
 
