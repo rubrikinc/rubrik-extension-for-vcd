@@ -9,7 +9,7 @@ Version 1.1.0 can be found [here](https://github.com/rubrikinc/rubrik-extension-
 Here are some resources to get you started! If you find any challenges from this project are not properly documented or are unclear, please [raise an issue](https://github.com/rubrikinc/rubrik-extension-for-vcd/issues/new/choose) and let us know! This is a fun, safe environment - don't worry if you're a GitHub newbie! :heart:
 
 * [Quick Start Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/quick-start.md)
-* [vCD User Guide](https://rubrik.gitbook.io/vcd-extension-for-rubrik/)
+* [Rubrik vCD Extension User Guide](https://rubrik.gitbook.io/vcd-extension-for-rubrik/)
 * [Github Docs](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
 
 # :muscle: How You Can Help
