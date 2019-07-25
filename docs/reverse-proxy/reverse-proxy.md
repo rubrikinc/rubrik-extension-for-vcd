@@ -2,7 +2,7 @@
 
 ## Scripted Build for Installing and Configuring the Nginx Reverse Proxy
 
-Coming Soon.
+Coming Soon - refer to proxy documentation [Here](../../reverse-proxy-builds/README.md)
 
 ## Manually Installing and Configuring Nginx Reverse Proxy
 
