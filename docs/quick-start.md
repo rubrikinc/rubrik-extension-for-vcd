@@ -92,7 +92,7 @@ Open a tenant to confirm the vApps load in the `Protection` tab and the White-la
 
 ### Reverse Proxy
 
-Before we can use the plugin, we need a Reverse Proxy between vCD and Rubrik, installation guides for this can be found in the Gitbook or [here](/reverse-proxy/reverse-proxy.md))
+Before we can use the plugin, we need a Reverse Proxy between vCD and Rubrik, installation guides for this can be found in the Gitbook or [here](/reverse-proxy/reverse-proxy.md)
 
 ### User Guide
 
