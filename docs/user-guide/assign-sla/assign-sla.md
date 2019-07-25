@@ -22,4 +22,4 @@ And finally completion
 
 ![alt-text](../img/img26.png)
 
-Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
+Return to [User Guide](../user-guide.md)
