@@ -4,18 +4,18 @@ On-Demand Snapshots are extremely similar to Assigning SLAs but this will perfor
 
 First, select the vApps you would like to perform the snapshot for, and select `On-Demand Snapshot`
 
-![alt-text](../img/image27.png)
+![alt-text](../img/img27.png)
 
 Once in the view for On-Demand Snapshot, select the relevant SLA which will confirm the retention for the snapshot in the Policy Description view (as seen above). Confirm the above by select Next and Done
 
-![alt-text](../img/image28.png)
+![alt-text](../img/img28.png)
 
 Finally, we can see the job status from the Events button against the specific vApp:
 
-![alt-text](../img/image29.png)
+![alt-text](../img/img29.png)
 
 Within the Events view, we can see specific detail regarding the event by selecting Activity Detail
 
-![alt-text](../img/image30.png)
+![alt-text](../img/img30.png)
 
 Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)

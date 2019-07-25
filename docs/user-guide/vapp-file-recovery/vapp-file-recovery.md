@@ -6,15 +6,15 @@ Within the Plugin, File Restores are now possible on a Per VM basis. We can choo
 
 First, we must select the VM that had the file we are trying to restore:
 
-![alt-text](../img/image36.png)
+![alt-text](../img/img36.png)
 
 Select `Next` will take us into the view to search for files, Enter a filename in the field that states `Enter Filename to search for:` and press `Search`. This will go find all files that contain this text and return a list which you can use the dropdown to choose:
 
-![alt-text](../img/image37.png)
+![alt-text](../img/img37.png)
 
 After selecting the file, we need to specify the version (this will only show the unique files i.e. ones that have changed from snapshot to snapshot):
 
-![alt-text](../img/image38.png)
+![alt-text](../img/img38.png)
 
 After selecting `Next`, we are presented with the restore options, these are as follows:
 
@@ -28,6 +28,6 @@ Regardless of which option selected, we will then be asked to the provide the fo
 
 Finally, if we restore to a separate folder,  we will also need to provide the path for a successful restore:
 
-![alt-text](../img/image39.png)
+![alt-text](../img/img39.png)
 
 Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)

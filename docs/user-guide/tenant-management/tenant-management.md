@@ -8,7 +8,7 @@ Open the Rubrik vCloud Director Plugin and Navigate to `Settings` and if not alr
  
 Once authenticated, select `Add/Update Cluster Credentials` - This will open up a wizard:
 
-![alt-text](../img/image15.png)
+![alt-text](../img/img15.png)
 
 You can now select the vCloud Director Organisation to add credentials for a specific vCloud Director Tenant. 
 Once select, you can now choose the Rubrik Organisation; we have 2 options at this point:
