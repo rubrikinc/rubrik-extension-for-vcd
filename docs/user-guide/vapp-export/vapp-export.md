@@ -51,6 +51,6 @@ Finally, we get the same options to configure the network as we do during Instan
 
 We can use the `Events` Button to track progress of this export.
 
-Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
+Return to [User Guide](../user-guide.md)
 
 

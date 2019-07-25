@@ -24,4 +24,4 @@ The tables will update with the new reports and the graphs will update with thei
 
 ![alt-text](../img/img50.png)
 
-Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
+Return to [User Guide](../user-guide.md)

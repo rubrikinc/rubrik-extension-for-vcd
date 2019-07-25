@@ -18,4 +18,4 @@ Within the Events view, we can see specific detail regarding the event by select
 
 ![alt-text](../img/img30.png)
 
-Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
+Return to [User Guide](../user-guide.md)

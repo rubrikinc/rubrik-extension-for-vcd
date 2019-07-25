@@ -25,4 +25,4 @@ Once the Tenant now logins via the vCloud Director Tenant URL, they will be able
 
 The Rubrik vCloud Director Plugin uses the existing user's permissions in vCloud director and therefore only displays vApps that the user has permission to inside of vCloud Director. This ensures they are not able to perform other actions on vApps they do not have permission to from vCloud Director within the plugin.
 
-Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
+Return to [User Guide](../user-guide.md)

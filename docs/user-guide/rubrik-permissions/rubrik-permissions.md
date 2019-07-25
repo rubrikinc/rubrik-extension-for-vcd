@@ -39,4 +39,4 @@ And using Managed Authorization we can provide specific permissions:
 
 ![alt-text](../img/img20.png)
 
-Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
+Return to [User Guide](../user-guide.md)

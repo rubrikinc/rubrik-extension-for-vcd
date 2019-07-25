@@ -30,4 +30,4 @@ Finally, if we restore to a separate folder,  we will also need to provide the p
 
 ![alt-text](../img/img39.png)
 
-Return to [User Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
+Return to [User Guide](../user-guide.md)
