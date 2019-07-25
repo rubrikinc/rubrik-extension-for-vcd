@@ -1,16 +1,6 @@
 # User Guide
 
 This guide provides step by step instructions for performing and managing the vCloud Director. It is broken down into the following:
-* Tenant Management by the Provider
-* Assign SLAs
-* Protect Resources On-Demand with On-Demand Snapshots
-* vApp Instant Recovery
-* vApp Virtual Machine File Recovery
-* vApp Exports
-* Dashboard and Reporting
-* Rubrik Permissions and Organisations
-
-Use the following pages to perform these self-service capabilities.
 
 * [Tenant Management](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/tenant-management/tenant-management.md)
 * [Rubrik Permissions and Organisations](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/rubrik-permissions/rubrik-permissions.md)
