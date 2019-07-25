@@ -10,7 +10,7 @@ Here are some resources to get you started! If you find any challenges from this
 
 * [Quick Start Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/quick-start.md)
 * [Rubrik vCD Extension User Guide](https://rubrik.gitbook.io/vcd-extension-for-rubrik/)
-* [Github Docs](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/user-guide/user-guide.md)
+* [Github Docs](/docs/user-guide/user-guide.md)
 
 # :muscle: How You Can Help
 
