@@ -9,8 +9,11 @@ Version 1.1.0 can be found [here](https://github.com/rubrikinc/rubrik-extension-
 Here are some resources to get you started! If you find any challenges from this project are not properly documented or are unclear, please [raise an issue](https://github.com/rubrikinc/rubrik-extension-for-vcd/issues/new/choose) and let us know! This is a fun, safe environment - don't worry if you're a GitHub newbie! :heart:
 
 * [Quick Start Guide](https://github.com/rubrikinc/rubrik-extension-for-vcd/blob/master/docs/quick-start.md)
-* [Rubrik vCD Extension User Guide](https://rubrik.gitbook.io/vcd-extension-for-rubrik/)
+* [Rubrik Extension for vCD User Guide](https://rubrik.gitbook.io/vcd-extension-for-rubrik/)
 * [Github Docs](/docs/user-guide/user-guide.md)
+* [BLOG: Extending Cloud Data Management to vCloud Director Tenants](https://www.rubrik.com/blog/cloud-data-management-vcloud-director/)
+* [VIDEO: Introduction to VMware vCloud Director and Rubrik UI Integration](https://www.youtube.com/watch?v=74-WuNdWPKI&t=4s)
+* [VIDEO: Technical Review of VMware vCloud Director and Rubrik Integration for Cloud Providers](https://www.youtube.com/watch?v=x2OriGQ-pdc&t=416s)
 
 # :muscle: How You Can Help
 
