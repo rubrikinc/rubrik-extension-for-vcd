@@ -19,7 +19,7 @@ EOM'
 
 echo "Installing Packages"
 sudo yum install -y epel-release policycoreutils
-sudo yum install -y nginx policycoreutils-2.5-29.el7.x86_64 --skip-broken
+sudo yum install -y nginx policycoreutils-2.5-29.el7.x86_64
 
 echo "Adding Firewall-cmd rules..."
 sudo firewall-cmd --permanent --zone=public --add-service=http
