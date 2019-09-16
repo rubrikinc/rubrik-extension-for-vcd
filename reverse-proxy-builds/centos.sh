@@ -120,12 +120,12 @@ server {
 
   location / {
   if (\$request_method ~* "(GET|POST|PATCH|DELETE)") {
-    add_header "Access-Control-Allow-Origin" "$http_origin" always;
+    add_header "Access-Control-Allow-Origin" "\$http_origin" always;
     add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
     }
     # Preflighted requests
     if (\$request_method = OPTIONS ) {
-      add_header "Access-Control-Allow-Origin" "$http_origin" always;
+      add_header "Access-Control-Allow-Origin" "\$http_origin" always;
       add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD,, PATCH, DELETE";
       add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept, x-vcloud-authorization";
       return 200;
