@@ -93,7 +93,7 @@ proxy_cache_path /var/cache/nginx/RBK levels=1:2 keys_zone=RBK:1m inactive=24h  
 
 server {
   listen       *:443 ssl;
-  server_name  rproxy.rubrikdemo.com;
+  server_name  <Reverse Proxy DNS/IP Addresds e.g. rproxy.rubrikdemo.com>;
 
   ssl on;
   ssl_certificate           /etc/tls/crt/STAR_wildcard.crt;
