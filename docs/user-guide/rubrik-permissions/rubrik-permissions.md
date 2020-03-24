@@ -16,6 +16,12 @@ This allows permitting to all objects at each of these hierarchal points
 
 ![alt-text](../img/img16.png)
 
+CDM 5.1.2 Specific Permissions
+With additional RBAC control with CDM 5.1.2, permissions now need to be specified to allow instant recovery and exports.
+Within the vCD View, we need to specify the Target vCD Organizations the Rubrik Organization has permission to restore into. Select the tab Target vCD Organizations and here we need to grant the vCD Cell, Org or VDC you wish to grant permissions that allow the users to restore into. For example:
+
+![alt-text](../img/img51.png)
+
 Since vApps are logical containers we should also consider permitting the folder created within the vCentre so that VM level actions can be performed, such as File/Folder Restore. This appears in a similar hierarchy to the vCD Components:
 
 * vCenter

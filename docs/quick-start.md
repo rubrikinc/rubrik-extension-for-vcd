@@ -4,7 +4,43 @@ Introducing the vCloud Director Extension for Rubrik. This Repo will provide ste
 
 Please find the GitBook for this plugin [here](https://rubrik.gitbook.io/vcd-extension-for-rubrik/)
 
-## Patch Notes - 1.1.0
+## Patch Notes - v1.1.2 - 24 March 2020
+
+### New Features
+
+* VM Exclusion now supported from the Plugin
+* Manual Authentication overhaul
+* Provider Settings now validates tenant credentials
+* Doc updates for New Organisation Features with 5.1.2
+
+### Bug Fixes
+
+* Export Organisations Incorrectly Displayed
+* Manual Authentication for Providers would not report back when failing
+* Heirarchy of vCD Cells sending undefined API calls
+* Reporting not filtering specific vCD vApps
+* Events API changes for 5.1.2
+
+### Compatibility
+
+* Support for vCD 9.7 - Requires CDM 5.1+
+* Support for vCD 10.0 - Requires CDM 5.1.2
+
+## Patch Notes - v1.1.1 - 11 November 2019
+
+### Bug Fixes
+
+* Fixed SLA Compliance for changes in Rubrik v5.1
+* Added Backwards compatibility between 5.0.x and 5.1.x when running multiple vCD Cells
+* Fixed Metadata in header to support full feature enablement (Dashboards)
+* Various payload fixes for Rubrik v5.1
+
+## Compatibility
+
+* Requires Rubrik v5.1.0 or v5.1.1 to support vCD 9.7
+* Plugin is backwards compatible for Rubrik v5.0.x & v4.x.x
+
+## Patch Notes - v1.1.0 - 23 June 2019
 
 ### Existing Features
 
