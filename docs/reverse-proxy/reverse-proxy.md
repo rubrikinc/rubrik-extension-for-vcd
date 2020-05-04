@@ -13,14 +13,17 @@ vi /etc/yum.repos.d/nginx.repo
 ```
 
 Add the following to the nginx.repo file
-```
+
 CentOS:
+```
 [nginx]
 name=nginx repo
 baseurl=http://nginx.org/packages/mainline/centos/7/$basearch/
 gpgcheck=0
 enabled=1
+```
 RHEL:
+```
 [nginx]
 name=nginx repo
 baseurl=http://nginx.org/packages/mainline/rhel/7/$basearch/
