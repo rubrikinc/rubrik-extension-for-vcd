@@ -4,6 +4,64 @@ Introducing the vCloud Director Extension for Rubrik. This Repo will provide ste
 
 Please find the GitBook for this plugin [here](https://rubrik.gitbook.io/vcd-extension-for-rubrik/)
 
+## Patch Notes - v1.1.4 - 29 July 2020
+
+### Breaking New Features
+
+* Tenant Configuration is now VDC specific
+* Provider portal displays a single Organization and VDC
+* *REQUIRED:* Each Metadata Entries should be updated to set the VDC ID
+    * For each Tenant configured under settings, enable the VDC ID column
+    
+        ![alt-text](./user-guide/img/img_rn_1.png)
+        
+    * Where the VDC ID is blank, select the row and delete or add/update the cluster credentials
+    
+        ![alt-text](./user-guide/img/img_rn_2.png)
+    
+    * If deleted, re-add the credentials, and check the VDC ID is populated
+    
+        ![alt-text](./user-guide/img/img_rn_3.png)
+    
+### New Features
+
+* Provider can now filter Organisations and VDCs in the protection screen
+* Tenant now load specific VDCs and display vApps for that VDC only
+
+### Bug Fixes
+* Delete Metadata could remove the wrong VDC metadata
+* File Restores with CDM 5.2 sometimes failed to restore
+* Datagrid did not notify when unable to load vApps
+* Datagrid loading now shows loading wheel and text whilst loading vApps
+* Error Handling unable to report in some scenarios
+
+### Compatibility
+
+This release is vCD 9.1, 9.5, 9.7 and 10.0 supported only
+
+## Patch Notes - v1.1.3 - 18 June 2020
+
+### New Features
+
+* Activity Monitor now available
+* CORS Support (Nginx Proxy no longer required with Rubrik CDM 5.2)
+* Provider Authentication View updated to select either Basic Auth or API Token
+
+### Bug Fixes
+* Snapshots do not load during instant restore/export clarity wizards (5.2 on vCD 10.0)
+* 5.2 Events internal API endpoints deprecated and moved to v1
+* 5.2 File Recovery failed due to field shouldUseAgent now being mandatory in the API request.
+* 5.2 Events API - When no key latestEvent, no error handle and calls stop
+* Activity Detail Icons no longer map to clarity icons
+* shouldPowerOnVMs present in Export Payload, when only used in Instant Recovery
+* If Export Values are left blank, undefined is appended to VM Suffix and vApp Name
+* API Tokens did not clear the loading flag during Provider Authentication
+* Activity Monitor did not authenticate on initial load as a provider
+
+### Compatibility
+
+This release is vCD 9.1, 9.5, 9.7 and 10.0 supported only
+
 ## Patch Notes - v1.1.2 - 24 March 2020
 
 ### New Features

@@ -2,13 +2,19 @@
 
 ## Adding the Plugin to a Tenant
 
-When sharing the plugin to a tenant via the VMware Lifecycle Management plugin, the plugin will require credentials configured for Rubrik so that the tenant can communicate with Rubrik to perform these self-service capabilities.
-
-Open the Rubrik vCloud Director Plugin and Navigate to `Settings` and if not already, `Authenticate` with Rubrik by selecting `Authenticate`; provide the `Proxy Address`, `Username` and `Password` *Or* `API Token`.
- 
-Once authenticated, select `Add/Update Cluster Credentials` - This will open up a wizard:
+When sharing the plugin to a tenant via the VMware Customize Portal plugin, the plugin will require credentials configured for Rubrik so that the tenant can communicate with Rubrik to perform these self-service capabilities.
 
 ![alt-text](../img/img15.png)
+
+Open the Rubrik vCloud Director Plugin and Navigate to `Settings`
+
+First, Authentication is required to configure the Tenants, therefore if not so already, press Authenticate and login to the Rubrik Cluster using either Basic Authentication (Username/Password) or an long-lived API Token.
+
+![alt-text](../img/img52.png)
+
+Once authenticated with Rubrik, select Add/Update Cluster Credentials - This will open up a wizard:
+
+![alt-text](../img/img53.png)
 
 You can now select the vCloud Director Organisation to add credentials for a specific vCloud Director Tenant. 
 Once select, you can now choose the Rubrik Organisation; we have 2 options at this point:
@@ -18,6 +24,8 @@ Once select, you can now choose the Rubrik Organisation; we have 2 options at th
 After confirming these 2 dropdown fields, we need to the Nginx Proxy and either specify a Username and Password or an API Token. Finally, we can toggle on/off the Dashboard and Remove the Rubrik Branding, with the `Whitelabel` toggle.
 
 Press next to save these values in the vCloud Director Tenant under the `Organization VDC`.
+
+![alt-text](../img/img54.png)
 
 Once the Tenant now logins via the vCloud Director Tenant URL, they will be able to load the plugin and use it with their existing vCloud Director RBAC permissions and permissions that have been assigned by Rubrik.
 
