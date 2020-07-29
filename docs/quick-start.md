@@ -19,7 +19,7 @@ Please find the GitBook for this plugin [here](https://rubrik.gitbook.io/vcd-ext
     
         ![alt-text](./user-guide/img/img_rn_2.png)
     
-    * If deleted, re-add the credentials, and check the VDC ID is populated
+    * If deleted, re-add the credentials, and check the VDC ID has been populated
     
         ![alt-text](./user-guide/img/img_rn_3.png)
     
