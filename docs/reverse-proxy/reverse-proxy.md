@@ -2,7 +2,62 @@
 
 ## Scripted Build for Installing and Configuring the Nginx Reverse Proxy
 
-Coming Soon - refer to proxy documentation [Here](../../reverse-proxy-builds/README.md)
+There are now 2 scripts available for both CentOS and Ubuntu to automate the proxy build, use the commands below for the desired distribution:
+
+### CentOS:
+
+```bash
+wget https://raw.githubusercontent.com/rubrikinc/rubrik-extension-for-vcd/master/reverse-proxy-builds/centos.sh
+```
+
+Before running the script we need to add our Rubrik Cluster IP and DNS for the Reverse Proxy, find and replace the following placeholders in the file (Using `VIM` or `Notepad`):
+`<Reverse Proxy DNS/IP Addresds e.g. rproxy.rubrikdemo.com>`: This will be the DNS or IP Address of the Proxy Server 
+`<Upstream Server Placeholder>`: This will be the DNS or IP or the Rubrik Cluster
+
+Save the updated script and and run with:
+
+```bash
+sudo chmod +x ./centos.sh
+./centos.sh
+```
+
+During the install you will be asked to provide information regarding the self signed certificates used on the proxy.
+
+#### Using Signed Certificates
+
+After the proxy is built, you can reconfigure the Certificates, by replacing the following files with your signed certificate and private key:
+
+```bash
+/etc/tls/crt/STAR_wildcard.crt
+/etc/tls/key/STAR_wildcard.key
+```
+
+### Ubuntu:
+
+```bash
+wget https://raw.githubusercontent.com/rubrikinc/rubrik-extension-for-vcd/master/reverse-proxy-builds/ubuntu_proxy.sh
+```
+
+Before running the script we need to add our Rubrik Cluster IP and DNS for the Reverse Proxy, find and replace the following placeholders (Using `VIM` or `Notepad`):
+
+`<Reverse Proxy DNS/IP Addresds e.g. rproxy.rubrikdemo.com>`: This will be the DNS or IP Address of the Proxy Server
+`<Upstream Server Placeholder>`: This will be the DNS or IP or the Rubrik Cluster
+
+During the install you will be asked to provide information regarding the self signed certificates used on the proxy.
+
+Save the updated script and and run with:
+
+```bash
+sudo chmod +x ./ubuntu_proxy.sh
+./ubunutu_proxy.sh
+```
+
+After the proxy is built, you can reconfigure the Certificates, by replacing the following files with your signed certificate and private key:
+
+```bash
+/etc/tls/crt/STAR_wildcard.crt
+/etc/tls/key/STAR_wildcard.key
+```
 
 ## Manually Installing and Configuring Nginx Reverse Proxy
 

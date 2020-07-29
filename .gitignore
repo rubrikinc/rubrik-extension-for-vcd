@@ -82,3 +82,6 @@ api-client/*
 .awcache/
 .awscache
 .awcache/*
+
+#vs-code
+.vscode
