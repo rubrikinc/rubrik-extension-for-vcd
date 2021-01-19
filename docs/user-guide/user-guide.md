@@ -1,6 +1,6 @@
 # User Guide
 
-This guide provides step by step instructions for performing and managing the vCloud Director. It is broken down into the following:
+This guide provides step by step instructions for performing and managing the VMware Cloud Director. It is broken down into the following:
 
 * [Tenant Management](tenant-management/tenant-management.md)
 * [Rubrik Permissions and Organisations](rubrik-permissions/rubrik-permissions.md)

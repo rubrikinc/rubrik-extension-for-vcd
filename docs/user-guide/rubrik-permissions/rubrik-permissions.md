@@ -2,15 +2,15 @@
 
 Under the configuration of tenants, there is the capability to use both Global or a Rubrik Organisation; this allows the restriction under RBAC to restrict and permit actions in Rubrik using Rubrik Organisations. These steps are outlined entirely in the User Guide - `Chapter 4 - Multitenant Organizations`. 
 
-For the vCloud Director Plugin, the recommendation would be to consider the following when setting up the Organisation.
+For the VMware Cloud Director Plugin, the recommendation would be to consider the following when setting up the Organisation.
 
-*Permit based on vCloud Director Organisation or VDC*
+*Permit based on VMware Cloud Director Organisation or VDC*
 
-When configuring the Organisation, we can permit access to any level in hierarchy within vCloud Director:
+When configuring the Organisation, we can permit access to any level in hierarchy within VMware Cloud Director:
 
-* vCloud Director Cell
-* vCloud Director Organisation
-* vCloud Director Organisation VDC
+* VMware Cloud Director Cell
+* VMware Cloud Director Organisation
+* VMware Cloud Director Organisation VDC
 
 This allows permitting to all objects at each of these hierarchal points
 
@@ -18,22 +18,22 @@ This allows permitting to all objects at each of these hierarchal points
 
 CDM 5.1.2 Specific Permissions
 With additional RBAC control with CDM 5.1.2, permissions now need to be specified to allow instant recovery and exports.
-Within the vCD View, we need to specify the Target vCD Organizations the Rubrik Organization has permission to restore into. Select the tab Target vCD Organizations and here we need to grant the vCD Cell, Org or VDC you wish to grant permissions that allow the users to restore into. For example:
+Within the VCD View, we need to specify the Target VCD Organizations the Rubrik Organization has permission to restore into. Select the tab Target VCD Organizations and here we need to grant the VCD Cell, Org or VDC you wish to grant permissions that allow the users to restore into. For example:
 
 ![alt-text](../img/img51.png)
 
-Since vApps are logical containers we should also consider permitting the folder created within the vCentre so that VM level actions can be performed, such as File/Folder Restore. This appears in a similar hierarchy to the vCD Components:
+Since vApps are logical containers we should also consider permitting the folder created within the vCentre so that VM level actions can be performed, such as File/Folder Restore. This appears in a similar hierarchy to the VCD Components:
 
 * vCenter
 * Host
 * Folder
 * Individual VMs
 
-Since vCloud Director creates us a folder for all VMs, we can permission the specific folder for this organisation:
+Since VMware Cloud Director creates us a folder for all VMs, we can permission the specific folder for this organisation:
 
 ![alt-text](../img/img17.png)
 
-Finally, we can then permission which SLAs are available the vCloud Director plugin, this is on the next page inside the Organisation configuration:
+Finally, we can then permission which SLAs are available the VMware Cloud Director plugin, this is on the next page inside the Organisation configuration:
 
 ![alt-text](../img/img18.png)
 
