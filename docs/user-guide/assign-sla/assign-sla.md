@@ -1,6 +1,6 @@
 ## Assign SLA to vApps
 
-After the permissions have been configured, we can start performing self-service actions against the vApps. Assign Protection opens the wizard to allow us to assign and change SLAs associated to one or many vApps in the vCloud Director Plugin.
+After the permissions have been configured, we can start performing self-service actions against the vApps. Assign Protection opens the wizard to allow us to assign and change SLAs associated to one or many vApps in the VMware Cloud Director Plugin.
 
 First, we must select the vApps we want to perform this action against and select Assign Protection:
 
