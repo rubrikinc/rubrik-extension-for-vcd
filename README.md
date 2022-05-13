@@ -2,7 +2,7 @@
 
 Contains Rubrik extensibility plugin for VMware Cloud Director.
 
-Version 1.2.0 can be found [here](https://github.com/rubrikinc/rubrik-extension-for-vcd/releases/tag/v1.2.0).
+Version 2.0.0 can be found [here](https://github.com/rubrikinc/rubrik-extension-for-vcd/releases/tag/v2.0.0-GA).
 
 # :blue_book: Documentation 
 
